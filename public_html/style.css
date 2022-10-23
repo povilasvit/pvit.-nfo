@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	
+}
+body {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  	background-color: lightgreen;
+}
+.a, .b{
+	margin-top: 5vh;
+	width: 20vw;
+	height: 10vh;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all .5s ease-in;
+}
+.a{
+	background-color: lightslategray;
+}
+.b{
+	background-color: lightcoral;
+}
+.a:hover{
+	background-color: darkgrey;
+}
+.b:hover{
+	background-color: darkcyan;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+    pointer-events: none;
+  }
+}
+
