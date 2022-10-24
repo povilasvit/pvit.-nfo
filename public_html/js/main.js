@@ -31,14 +31,16 @@ const goToShop = document.querySelector('.goToShop');
 const goToShopB = document.querySelector('.goToShopB');
 const arrowDown = document.querySelector('.downArrow'); 
 
-goToShop.addEventListener('mouseenter', function(){
-	goToShopB.classList.add('goToShopBMove');
-	setTimeout(arrowOpacity, 100);
-});
-goToShop.addEventListener('mouseleave', function(){
-	goToShopB.classList.remove('goToShopBMove');
-	arrowDown.style.opacity = 0;
-});
+if(window.innerWidth > 1200){
+	goToShop.addEventListener('mouseenter', function(){
+		goToShopB.classList.add('goToShopBMove');
+		setTimeout(arrowOpacity, 100);
+	});
+	goToShop.addEventListener('mouseleave', function(){
+		goToShopB.classList.remove('goToShopBMove');
+		arrowDown.style.opacity = 0;
+	});
+}
 
 function arrowOpacity(){
 	arrowDown.style.opacity = 1;
