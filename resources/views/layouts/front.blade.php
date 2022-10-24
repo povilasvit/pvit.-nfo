@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>pvit.info</title>
+<title>Linvity: Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -34,7 +34,7 @@
 						<a href="{{route('orders.index')}}" class="navAdmin nav navActive">Admin</a>
 					@endif
 					@if(Cart::count() > 0)
-						<a href="{{route('cart')}}" class="nav navActive naviIcon">
+						<a href="{{route('cart')}}#container" class="nav navActive naviIcon">
 							<div class="navIcon"><img src="{{asset('images/icons/icons8-shopping-bag-48.png')}}"></div>
 							<span class="navBagItemsCount">{{Cart::count()}}</span>
 						</a>
@@ -69,9 +69,18 @@
 			</div>
 			<div class="navText">
 				<div class="navTextH">Rankų darbo papuošalai</div>			
-				<div class="goToShop"><p>Eiti į Parduotuvę</p>
-					<div class="goToShopB"><i class="downArrow fa-solid fa-angles-down"></i></div>
-				</div>			
+				@if(request()->routeIs('frontHome') || request()->routeIs('webcategory') || request()->routeIs('allProducts')|| request()->routeIs('singleProduct')) 
+				  <div class="goToShop"><p>Eiti į Parduotuvę</p>
+				  	<div class="goToShopB"><i class="downArrow fa-solid fa-angles-down"></i></div>
+				  </div>				
+				@else
+					<a href="{{ route('frontHome')}}" class="agoToShop">
+						<div class="goToShop"><p>Eiti  Parduotuvę</p>
+							<div class="goToShopC"></div>
+						</div>
+					</a>	
+				@endif
+		
 							
 			</div>
 		</div>
@@ -107,7 +116,7 @@
 		</div> <!-- contactContainer -->
 		@if(Cart::count() > 0)
 			<div class="shoppingCart">
-				<a href="{{route('cart')}}" class="innerCircle">
+				<a href="{{route('cart')}}#container" class="innerCircle">
 					<img src="/images/icons/icons8-shopping-bag-48().png">
 				</a>
 				<span class="shoppingCartCount">{{Cart::count()}}</span>
@@ -125,24 +134,25 @@
 			<div class="footerPrimary">
 				<div class="section">
 					<div><h3>Asortimentas</h3></div>
-						<div><a href="{{route('allProducts')}}">Visos Prekės</a></div>
+						<div><a href="{{route('allProducts')}}#container">Visos Prekės</a></div>
 
 						@foreach($categories as $category)
-							<div><a href="{{route('webcategory', $category->id)}}">{{$category->name}}</a></div>
+							<div><a href="{{route('webcategory', $category->id)}}#container">{{$category->name}}</a></div>
 						@endforeach
 				</div>
 				<div class="section2">
 					<div><h3>Nuorodos</h3></div>
-					<div><a href="{{route('shipping')}}">Prekių Pristatymas</a></div>
-					<div><a href="{{route('return_and_replacement')}}">Prekių Grąžinimas</a></div>
-					<div><a href="{{route('privacy')}}">Prekių Pristatymas</a></div>
+					{{-- <a href="someotherpage.html#somelocation">Go to somelocation on someotherpage</a> --}}
+					<div><a href="{{route('shipping')}}#container">Prekių Pristatymas</a></div>
+					<div><a href="{{route('return_and_replacement')}}#container">Prekių Grąžinimas</a></div>
+					<div><a href="{{route('privacy')}}#container">Prekių Pristatymas</a></div>
 				</div>
 				<div class="section3">
 					<div><h3>Kontaktai</h3></div>
-					<div><a href=""><i class="fas fa-phone"></i> +37068955555</a></div>
-					<div><a href=""><i class="fas fa-envelope-square"></i> povilasvitkauskass@gmail.com</a></div>
-					<div><a href=""><i class="fab fa-facebook-f"></i> Pvit.info Facebook</a></div>
-					<div><a href=""><i class="fab fa-instagram"></i> Pvit.info Instagramk</a></div>
+					<div><a href=""><i class="fas fa-phone"></i> +37028918</a></div>
+					<div><a href=""><i class="fas fa-envelope-square"></i> info@linvity.com</a></div>
+					<div><a href=""><i class="fab fa-facebook-f"></i> Linvity Facebook</a></div>
+					<div><a href=""><i class="fab fa-instagram"></i> Linvity Instagramk</a></div>
 				</div>
 			</div>
 		</footer>
