@@ -2,7 +2,7 @@
 
 @section('content')
 
-		<div class="shopCateoryContainer">
+		<div class="shopCateoryContainer" id="container">
 			<h3 class="categoryHeader"></h3>
 				<div class="productsWrapper">
 					@foreach($products as $product)

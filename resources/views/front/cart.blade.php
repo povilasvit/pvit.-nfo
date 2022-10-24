@@ -3,7 +3,7 @@
 @section('content')
 		@if(Cart::content()->count() > 0)
 
-		<div class="shopCateoryContainer">
+		<div class="shopCateoryContainer" id="container">
 			<form 
 				action="{{route('charge')}}" 
 				method="post"

@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="shopCateoryContainer">
+	<div class="shopCateoryContainer"  id="container">
 		@foreach($others as $other)
 			@if($other->name == 'Shipping')
 				<div class="other">{!!$other->content!!}</div>
