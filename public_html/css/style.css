@@ -264,6 +264,9 @@ nav{
 .goToShopB i{
 	padding-bottom: 0.6rem;
 }
+.agoToShop{
+	text-decoration: none;
+}
 
 .shopCateoryContainer{
 	background-color: var(--secondaryColor);
